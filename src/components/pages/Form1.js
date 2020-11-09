@@ -3,7 +3,9 @@ import React from 'react'
 const Form1 = () => {
     return (
         <div>
+            <form>
             <div>
+                
             <label for="name">Name</label>
             <input type="text" id="name"></input>
             </div>
@@ -15,6 +17,7 @@ const Form1 = () => {
             <input type="text" id="month"></input>
             <label for="name">Year</label>
             <input type="number" id="year"></input>
+            </form>
         </div>
     )
 }
