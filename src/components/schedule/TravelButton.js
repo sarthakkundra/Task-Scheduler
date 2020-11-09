@@ -1,9 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-const TravelButton = () => {
+import { Link } from 'react-router-dom';
+
+const TravelButton = ({content}) => {
+
+    var link;
+
+    if(content === "Create Schedule"){
+        link = "/form"
+    } else if(content === "Next"){
+        link = "/form2"
+    }
     return (
         <div>
-           <button style={traveller}>Create Schedule</button> 
+          <Link to={link}><button style={traveller}>{content}</button> </Link>
             <br></br>
             <br></br>
         </div>

@@ -1,25 +1,35 @@
-import React from 'react'
+import React from "react";
+
+import { Form, Button, FormControl, Col } from "react-bootstrap";
 
 const Form1 = () => {
-    return (
-        <div>
-            <form>
-            <div>
-                
-            <label for="name">Name</label>
-            <input type="text" id="name"></input>
-            </div>
+	return (
+		<div>
+			<Form>
+				<Form.Group controlId='title'>
+					<Form.Label>Title</Form.Label>
+					<Form.Control type='text' placeholder='Leadership training 101' />
+				</Form.Group>
+                <Form.Group controlId='timing'>
+                    <h3>Date</h3>
+				<Form.Row>
+					<Col>
+                    <h5>Day</h5>
+						<Form.Control placeholder='Monday' />
+					</Col>
+					<Col>
+                    <h5>Month</h5>
+						<Form.Control placeholder='January' />
+					</Col>
+                    <Col>
+                    <h5>Year</h5>
+						<Form.Control placeholder='2020' />
+					</Col>
+				</Form.Row>
+                </Form.Group>
+			</Form>
+		</div>
+	);
+};
 
-            <h7>Date</h7>
-            <label for="name">Day</label>
-            <input type="text" id="day"></input>
-            <label for="name">Month</label>
-            <input type="text" id="month"></input>
-            <label for="name">Year</label>
-            <input type="number" id="year"></input>
-            </form>
-        </div>
-    )
-}
-
-export default Form1
+export default Form1;
