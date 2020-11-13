@@ -10,9 +10,15 @@ const FEED_QUERY = gql`
 	{
 		task {
 			name
-			date
-			start_time
-			end_time
+            day
+            month
+            year
+            startHr
+            startMin
+            startZone
+            endHr
+            endMin
+            endZone
 		}
 	}
 `;
@@ -27,17 +33,19 @@ const ScheduleCards = () => {
                         {({  loading, error, data }) => {
                             if(loading) return <div>Fetching</div>
                             if(error) return <div>Error  Loading</div>
-                            console.log(data)
                             cards = data.task
 
                             return (
                                 <div>
                                 {cards.map((task) => (
                                     <ScheduleCard
-                                        date={task.date}
+                                        day = {task.day}
+                                        month={task.month}
+                                        year={task.year}
                                         name={task.name}
-                                        start={task.start_time}
-                                        end={task.end_time}
+                                        startHr = {task.startHr}
+                                        startZone = {task.startZone}
+                                        endHr = {task.endZone}
                                     />
                                 ))}
                                 </div>

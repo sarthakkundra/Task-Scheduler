@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react'
 
-const ScheduleCard = ({ date, name, start ,end }) => {
+const ScheduleCard = ({ day, month, year, name, startHr, startZone, endHr, endZone }) => {
     return (
         <Fragment>
         <div style={card}>
             <div style={dateCard}>
-                {date}
+                {day}
             </div>
             <div>
                 <h3>{name}</h3>
                 <div>
-                    {start} to {end}
+                    {startHr} {startZone} to {endHr} {endZone}
                 </div>
             </div>
         </div>

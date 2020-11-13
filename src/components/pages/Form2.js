@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Form, Col } from 'react-bootstrap';
+import { Form, Col } from "react-bootstrap";
 
 const Form2 = () => {
+	const [userId, setUserId] = useState(1);
+	const [startTime, setStartTime] = useState();
+	const [endTime, setEndTime] = useState();
+
+	const changeTime = (e)  => {
+			setStartTime(e.target.value)
+			console.log(startTime)
+	}
 	return (
+	
 		<div>
 			<Form.Group controlId='startTiming'>
 				<h3>Start Time</h3>
 				<Form.Row>
 					<Col>
 						<h5>Hr</h5>
-						<Form.Control placeholder='00-24' />
+						<Form.Control placeholder='00-24' onChange= {changeTime} />
 					</Col>
 					<Col>
 						<h5>Min</h5>
